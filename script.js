@@ -65,8 +65,10 @@ resultado.textContent =
   "ID MB= " + id1.value.trim() +
   ", SP= " + spTexto +
   ", Fecha= " + fecha.value +
-  ", Importe= " + importe.value;
+  ", Importe= " + importe.value +
+  ", ESTADO = CONCILIADO / NO CONCILIADO / EN DEVOLUCION";
   });
+
 
 
 
