@@ -66,6 +66,7 @@ resultado.textContent =
   ", SP= " + spTexto +
   ", Fecha= " + fecha.value +
   ", Importe= " + importe.value +
-  ", ESTADO= CONCILIADO/NO CONCILIADO/EN DEVOLUCIÓN";
+  ", ESTADO= CONCILIADO / NO CONCILIADO / EN DEVOLUCIÓN";
 
   });
+
