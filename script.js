@@ -1,4 +1,6 @@
-  const boton = document.querySelector("button");
+  const boton = document.getElementById("button");
+  const btnMailto = document.getElementById("btnMailto");
+  const btnCopiar = document.getElementById("btnCopiar");
   const resultado = document.getElementById("resultado");
 
   const id1 = document.getElementById("idmb");
@@ -68,6 +70,7 @@ resultado.textContent =
   ", Importe= " + importe.value +
   ", ESTADO = CONCILIADO / NO CONCILIADO / EN DEVOLUCION";
   });
+
 
 
 
