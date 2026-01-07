@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Consulta TRX</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+<body>
+  <div class="card">
+  <h1>Portal de Consulta de Transacciones</h1>
+
+  <p>Completa los datos y luego presiona “Consultar”</p>
+
+  <label for="idmb">ID MB</label><br />
+  <input id="idmb" type="text" inputmode="numeric" minlength="6" maxlength="12" required placeholder="Ej: 3212666" />
+
+
+<label for="sp">Service Provider</label><br />
+<select id="sp">
+  <option value="">-- Selecciona --</option>
+  <option value="CLARO_PRE">Claro Pre</option>
+  <option value="CLARO_POST">Claro Post</option>
+  <option value="BITEL_PRE">Bitel Pre</option>
+  <option value="BITEL_POST">Bitel Post</option>
+  <option value="IZIPAY">Izipay QR</option>
+  <option value="WU_HUB">WU-HUB</option>
+</select>
+<br /><br />
+
+
+  <label for="fecha">Fecha</label><br />
+  <input id="fecha" type="date" required /><br /><br />
+
+  <label for="importe">Importe</label><br />
+  <input id="importe" type="number" step="0.01" placeholder="Ej: 15.00" /><br /><br />
+
+  <button>Consultar</button>
+  <p id="resultado"></p>
+
+  </div>
+<script src="script.js"></script>
+</body>
+</html>
