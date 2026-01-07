@@ -35,7 +35,29 @@ function validarFechaNoHoyNiFuturo(valorFecha) {
   return null;
 }
 
-  boton.addEventListener("click", function () {
+function construirCorreo() {
+  const spTexto = sp.options[sp.selectedIndex].text;
+
+  const subject = `Consulta TRX | ID MB ${id1.value.trim()} | ${spTexto}`;
+
+  const body =
+`Hola equipo,
+
+Solicito su apoyo con la validación del estado de la siguiente transacción:
+
+- ID MB: ${id1.value.trim()}
+- Service Provider: ${spTexto}
+- Fecha: ${fecha.value}
+- Importe: ${importe.value}
+
+Gracias,
+`;
+
+  return { subject, body };
+}
+
+
+  btnConsultar.addEventListener("click", function () {
   const spTexto = sp.options[sp.selectedIndex].text;
 // Limpia estilos previos
 resultado.classList.remove("alert-ok", "alert-error");
@@ -70,6 +92,34 @@ resultado.textContent =
   ", Importe= " + importe.value +
   ", ESTADO = CONCILIADO / NO CONCILIADO / EN DEVOLUCION";
   });
+
+btnMailto.addEventListener("click", function () {
+  // Ideal: solo permitir si ya pasó validación mínima
+  const { subject, body } = construirCorreo();
+
+  const mailto =
+    "mailto:" +
+    "?subject=" + encodeURIComponent(subject) +
+    "&body=" + encodeURIComponent(body);
+
+  window.location.href = mailto;
+});
+
+btnCopiar.addEventListener("click", async function () {
+  const { subject, body } = construirCorreo();
+  const texto = `Asunto: ${subject}\n\n${body}`;
+
+  try {
+    await navigator.clipboard.writeText(texto);
+    resultado.classList.remove("alert-error");
+    resultado.classList.add("alert-ok");
+    resultado.textContent = "Correo copiado. Pega el contenido en Outlook.";
+  } catch (e) {
+    resultado.classList.remove("alert-ok");
+    resultado.classList.add("alert-error");
+    resultado.textContent = "No se pudo copiar automáticamente. Copia manualmente el texto.";
+  }
+});
 
 
 
