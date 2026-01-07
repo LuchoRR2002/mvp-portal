@@ -80,4 +80,20 @@ button:hover {
 .alert-error {
   background: #fef2f2;
   border: 1px solid #fecaca;
+
+}
+
+.acciones {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.acciones button {
+  width: 50%;
+  background: #334155;
+}
+
+.acciones button:hover {
+  opacity: 0.92;
 }
