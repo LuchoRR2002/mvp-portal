@@ -66,8 +66,8 @@ resultado.textContent =
   ", SP= " + spTexto +
   ", Fecha= " + fecha.value +
   ", Importe= " + importe.value;
-
   });
+
 
 
 
